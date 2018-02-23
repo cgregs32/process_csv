@@ -4,7 +4,7 @@ class Grade < ApplicationRecord
     message: 'should match (A B C D E)'}
 
   validates :course, uniqueness: { scope: [:course_id, :student_id],
-    message: "should only have one grade per student per course" }
+    message: "should be unique by course and student" }
 
   belongs_to :student
   belongs_to :course
